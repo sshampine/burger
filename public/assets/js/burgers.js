@@ -20,7 +20,7 @@ $(function() {
 		)
 	});
 
-	$("#create-form").on("submit", function(event) {
+	$(".create-form").on("submit", function(event) {
 		event.preventDefault();
 
 		var newBurger = {
@@ -34,4 +34,7 @@ $(function() {
 			location.reload();
 		})
 	})
+
+
+	
 })
