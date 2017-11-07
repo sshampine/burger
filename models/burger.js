@@ -6,8 +6,13 @@ var burger = {
 			callback(results)
 		})
 	},
-	create: function(columns, vals, callback) {
-		orm.create("burgers", columns, vals, function(results) {
+	create: function(cols, vals, callback) {
+		orm.create("burgers", cols, vals, function(results) {
+			callback(results)
+		})
+	},
+	update: function(objVals, condition, callback) {
+		orm.update("burgers", objVals, condition, function(results) {
 			callback(results)
 		})
 	},

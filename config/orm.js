@@ -46,11 +46,11 @@ var orm = {
 		})
 	},
 
-	create: function(tableInput, columns, vals, callback){
-		var queryString = "INSERET INTO " + tableInput;
+	create: function(tableInput, cols, vals, callback){
+		var queryString = "INSERT INTO " + tableInput;
 		
 		queryString += " (";
-		queryString += columns.toString();
+		queryString += cols.toString();
 		queryString += ") ";
 		queryString += "VALUES (";
 		queryString += printQuestionMarks(vals.length);
@@ -61,6 +61,23 @@ var orm = {
 		connection.query(queryString, vals, function(error, result) {
 			if (error) {
 				throw error
+			}
+			callback(result)
+		})
+	},
+
+	update: function(tableInput, objVals, condition, callback) {
+		var queryString = "UPDATE " + tableInput;
+		queryString += " SET ";
+		queryString += objToSql(objVals);
+		queryString += " WHERE ";
+		queryString += condition;
+
+		console.log(queryString);
+
+		connection.query(queryString, function(error, result) {
+			if (error) {
+				throw error;
 			}
 			callback(result)
 		})

@@ -1,12 +1,20 @@
 $(function() {
-	$(".delete-burger").on("click", function(event) {
+	$(".devour-burger").on("click", function(event) {
 		var id = $(this).data("id");
 		//console.log("delete burger")
+		//var newEat = $(this).data("newEat");
+
+		var newEatState = {
+			devoured: true
+		};
+
 		$.ajax("/api/burgers/" + id, {
-			type: "DELETE"
+			//type: "DELETE"
+			type: "PUT",
+			data: newEatState
 		}).then(
 		function() {
-			console.log("deleted id ", id);
+			console.log("changed devoured to ");
 			location.reload();
 		}
 		)
