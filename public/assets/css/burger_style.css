@@ -13,9 +13,16 @@ body {
 
 .well2 {
 	background-color: #CF3721;
-	color: #FFF;
 }
 
-ul li {
-	background-color: #31A9B8;
+.white {
+	color: #fff;
+}
+
+.black {
+	color: #000;
+}
+
+li {
+	font-size: 18px;
 }
