@@ -46,8 +46,8 @@ var orm = {
 		})
 	},
 
-	create: function(tableInput, cols, vals, callback){
-		var queryString = "INSERT INTO " + tableInput;
+	create: function(table, cols, vals, callback){
+		var queryString = "INSERT INTO " + table;
 		
 		queryString += " (";
 		queryString += cols.toString();
