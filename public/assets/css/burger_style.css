@@ -4,15 +4,16 @@ body {
 }
 
 .jumbotron {
-	background-color: #F5BE41;
+	background-color: #258039;
 }
 
 .well1 {
-	background-color: #258039;
+	background-color: #F5BE41;
 }
 
 .well2 {
 	background-color: #CF3721;
+	color: #FFF;
 }
 
 ul li {

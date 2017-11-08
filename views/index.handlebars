@@ -9,13 +9,14 @@
 		<div class="col-md-6">
 			<div class="well well1">
 				<h2>Burgers to be et</h2
-				<hr>
+				<ul class="list-group">
 				{{#each burgers}}
 					{{#unless this.devoured}}
-						<p>{{this.burger_name}}
-						<button class="btn btn-warning devour-burger" data-id="{{this.id}}">Devour!</button></p>
-			{{/unless}}
-		{{/each}}
+						<li class="list-group-item list-group-item-warning">{{this.burger_name}}
+						<button class="btn btn-danger devour-burger" data-id="{{id}}">Devour!</button></li>
+					{{/unless}}
+				{{/each}}
+				</ul>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -24,7 +25,8 @@
 				<ul class="list-group">
 					{{#each burgers}}
 						{{#if devoured}}
-							<li class="list-group-item list-group-item-warning">{{burger_name}}</li>
+							<li class="list-group-item list-group-item-warning">{{burger_name}}
+							<button class="btn btn-warning poop-burger" data-id="{{this.id}}">Poop Out da Burger!</button></li>
 						{{/if}}
 					{{/each}}
 				</ul>

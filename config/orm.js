@@ -84,8 +84,8 @@ var orm = {
 		})
 	},
 
-	delete: function(tableInput, condition, callback) {
-		var queryString = "DELETE FROM " + tableInput
+	delete: function(table, condition, callback) {
+		var queryString = "DELETE FROM " + table
 		queryString += " WHERE ";
 		queryString += condition;
 
