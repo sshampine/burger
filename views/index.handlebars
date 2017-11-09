@@ -10,12 +10,12 @@
 			<div class="well well1">
 				<h2 class="text-center">Burgers to be et</h2
 				<ul class="list-group">
-				{{#each burgers}}
-					{{#unless this.devoured}}
-						<li class="list-group-item list-group-item-warning">{{this.burger_name}}
-						<button class="btn btn-danger devour-burger" data-id="{{id}}">Devour!</button></li>
-					{{/unless}}
-				{{/each}}
+					{{#each burgers}}
+						{{#unless this.devoured}}
+							<li class="list-group-item list-group-item-warning">{{this.burger_name}}
+							<button class="btn btn-danger devour-burger" data-id="{{id}}">Devour!</button></li>
+						{{/unless}}
+					{{/each}}
 				</ul>
 			</div>
 		</div>
