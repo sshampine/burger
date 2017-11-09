@@ -1,3 +1,4 @@
+//imports mysql connection
 var connection = require("../config/connection.js")
 
 function printQuestionMarks(num) {
@@ -34,7 +35,7 @@ function objToSql(ob) {
 }
 
 
-
+//object for SQL statement functions
 var orm = {
 	all: function(tableInput, callback) {
 		var queryString = "SELECT * FROM " + tableInput + ";";
@@ -98,5 +99,5 @@ var orm = {
 	}
 }
 
-
+//exports the orm for the model
 module.exports = orm;

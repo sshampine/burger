@@ -1,15 +1,15 @@
+//jquery to grab html handlers from dom
+
 $(function() {
 	$(".devour-burger").on("click", function(event) {
 		var id = $(this).data("id");
-		//console.log("delete burger")
-		//var newEat = $(this).data("newEat");
 
 		var newEatState = {
 			devoured: true
 		};
 
 		$.ajax("/api/burgers/" + id, {
-			//type: "DELETE"
+			//send PUT request
 			type: "PUT",
 			data: newEatState
 		}).then(
@@ -27,10 +27,12 @@ $(function() {
 			name: $("#burg").val().trim(),
 		}
 		$.ajax("api/burgers/", {
+			//send POST reqeust
 			type: "POST",
 			data: newBurger
 		}).then(function(){
 			console.log("created new burger")
+			//reloads the page to get updated list
 			location.reload();
 		})
 	})
@@ -39,10 +41,12 @@ $(function() {
 		var id = $(this).data("id");
 		console.log(id)
 		$.ajax("/api/burgers/" + id, {
+			//send DELETE request
 			type: "DELETE",
 		}).then(
 			function() {
 				console.log("deleted burger, " + id);
+				//reloads the page to get updated list
 				location.reload()
 			}
 		)
